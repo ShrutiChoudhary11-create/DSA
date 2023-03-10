@@ -1,0 +1,18 @@
+import java.util.*;
+public class First_max {
+    static int max(int arr[],int m,int i){
+        if(i==arr.length)
+            return m;
+        
+        if(m<=arr[i])
+            m=arr[i];
+            return max(arr,m,i+1);
+    }
+    public static void main(String[] args) {
+        Scanner in=new Scanner (System.in);
+         int a[]={2,1,4,6,7};
+        int max=a[0];
+        int m= max(a,max,1);
+       System.out.println("First largest number in array = "+m);
+    }
+}
