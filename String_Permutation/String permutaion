@@ -1,0 +1,30 @@
+// String permutation
+import java.util.ArrayList;
+public class StringPermutation {
+    static ArrayList<String> sPerm(String str){
+        if(str.length()==0){
+            ArrayList<String> empArrayList=new ArrayList<>();
+            empArrayList.add("");
+            return empArrayList;
+        }
+    char currentChar=str.charAt(0);
+        String remString=str.substring(1);
+        ArrayList<String> temp=sPerm(remString);
+        ArrayList<String> result=new ArrayList<>();
+        for(String s:temp){
+           for(int i=0;i<str.length();i++){
+            StringBuffer in=new StringBuffer(s);
+            in.insert(i,currentChar);
+            result.add(in.toString());
+           }
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        String str="abc";
+        ArrayList<String> s= sPerm(str);
+        System.out.println(s);
+        
+    }
+    
+}
