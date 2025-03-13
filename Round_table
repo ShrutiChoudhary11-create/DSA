@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class round_table_confrence {
+
+       public static int fact(int number)
+      {
+           int res= 1;
+           int a=2;
+           for (int i = number; i > 0; i--)
+                 res = res*i;
+
+                 res=res*a;
+           return res;
+      }
+      public static void main(String[] args)
+     {
+           Scanner sc=new Scanner(System.in);
+           int n=sc.nextInt();
+           int res=fact(n-1);
+           System.out.println(res);    
+     }
+}
+
