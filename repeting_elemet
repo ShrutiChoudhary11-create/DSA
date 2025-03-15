@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class repeting_elements {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=in.nextInt();
+        }
+
+        // HashSet<Integer> st=new HashSet<>();
+        // for(int it:arr){
+            // if(st.contains(it)){                         //by using for loop
+        //         System.out.print(it+" ");
+        //         st.remove(it);
+        //     }else{
+        //         st.add(it);
+        //     }
+        // }
+
+        HashMap<Integer,Integer> mp=new HashMap<>();
+
+        for (int it: arr){
+            if(mp.containsKey(it)){
+                mp.put(it,mp.getOrDefault(it,1)+1);
+            }else{
+                mp.put(it,1);
+            }
+        }
+
+    //     mp.forEach((key, value) -> {               //The .forEach part will iterate over the map's entrySet() and 
+    //     if (value >1) {                            // extract each entry's key and value respectively onto (key, value).
+    //     System.out.print(format("key: %s",key+" "));
+    // }
+    //     });
+
+
+        for(int i: mp.keySet()){                           //by using hash set
+            if(mp.get(i)>(1)){
+                System.out.print("key:"+i);
+            }            
+        }
+
+    }
+}
+    
